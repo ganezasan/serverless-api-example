@@ -1,0 +1,12 @@
+{
+  "name": "serverless-api-example",
+  "version": "1.0.0",
+  "description": "A sample API using dynamodb, lamdba, cognito, jest, lambda-local",
+  "main": "index.js",
+  "repository": "https://github.com/ganezasan/serverless-api-example.git",
+  "author": "ganezasan <istaka12@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^1.27.3"
+  }
+}
