@@ -1,0 +1,16 @@
+Type: "AWS::Cognito::UserPoolClient"
+Properties:
+    ClientName:
+      Ref: AWS::StackName
+    GenerateSecret: false
+    ExplicitAuthFlows:
+      - "ADMIN_NO_SRP_AUTH"
+    RefreshTokenValidity: 30
+    UserPoolId:
+      Ref: CognitoUserPool
+    ReadAttributes:
+      - "email"
+      - "name"
+    WriteAttributes:
+      - "email"
+      - "name"
