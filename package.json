@@ -6,6 +6,11 @@
   "repository": "https://github.com/ganezasan/serverless-api-example.git",
   "author": "ganezasan <istaka12@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "deploy": "cd resources && sls deploy && cd ../functions && sls deploy",
+    "deploy:functions": "cd functions && sls deploy",
+    "deploy:resources": "cd resources && sls deploy"
+  },
   "devDependencies": {
     "serverless": "^1.27.3"
   }
