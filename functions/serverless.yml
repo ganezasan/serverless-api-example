@@ -1,0 +1,22 @@
+service: ${self:custom.appName}-functions
+frameworkVersion: "=1.27.3"
+custom:
+  appName: todoApp
+  resourcesCf: ${self:custom.appName}-resources-${self:provider.stage}
+  cognitoUserPoolArn:
+    ${cf:${self:custom.resourcesCf}.CognitoUserPoolArn}
+provider:
+  name: aws
+  runtime: nodejs8.10
+  profile: ${opt:profile, 'private'}
+  stage: ${opt:stage, 'development'}
+  region: ap-northeast-1
+  role:
+    ${cf:${self:custom.resourcesCf}.ExecLambdaRoleArn}
+package:
+  individually: true
+  exclude:
+    - '**/*'
+functions:
+  # hello
+  hello: ${file(./hello/index.yml)}

@@ -1,0 +1,13 @@
+name: hello
+handler: hello/handler.handler
+memorySize: 128
+package:
+  include:
+    - 'hello/*'
+events:
+  - http:
+      path: hello
+      method: GET
+      cors: true
+      integration: lambda
+      authorizer: ${file(./authorizer.yml)}

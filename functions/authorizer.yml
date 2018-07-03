@@ -1,0 +1,4 @@
+arn: ${self:custom.cognitoUserPoolArn}
+claims:
+  - email
+  - name
